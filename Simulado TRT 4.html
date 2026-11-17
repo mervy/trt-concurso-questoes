@@ -12,10 +12,10 @@
   --grad:linear-gradient(135deg,#6366f1 0%,#22d3ee 100%);
   --ok:#22c55e; --bad:#ef4444; --warn:#f59e0b;
   --glass:rgba(255,255,255,.045); --line:rgba(255,255,255,.10);
-  --ink:#e9edf7; --muted:#9aa6bf; --bg:#080d1a;
+  --ink:#e9edf7; --muted:#9aa6bf; --bg:#080d1a; --field:#111a2e;
 }
 [data-bs-theme="light"]{
-  --glass:#ffffff; --line:#e6e9f2; --ink:#111827; --muted:#6b7280; --bg:#f3f5fb;
+  --glass:#ffffff; --line:#e6e9f2; --ink:#111827; --muted:#6b7280; --bg:#f3f5fb; --field:#ffffff;
 }
 *{scrollbar-width:thin}
 body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;overflow-x:hidden}
@@ -66,8 +66,10 @@ body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"
 .qmap button{aspect-ratio:1;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--muted);font-weight:700;font-size:.8rem}
 .qmap button.done{background:rgba(99,102,241,.22);color:var(--ink);border-color:#6366f1}
 .qmap button.cur{outline:2px solid #22d3ee}
-.form-control,.form-select{background:var(--glass);border-color:var(--line);color:var(--ink)}
-.form-control:focus,.form-select:focus{background:var(--glass);color:var(--ink);border-color:#6366f1;box-shadow:0 0 0 .2rem rgba(99,102,241,.18)}
+.form-control,.form-select{background-color:var(--field);border-color:var(--line);color:var(--ink)}
+.form-control:focus,.form-select:focus{background-color:var(--field);color:var(--ink);border-color:#6366f1;box-shadow:0 0 0 .2rem rgba(99,102,241,.18)}
+.form-control::placeholder{color:var(--muted)}
+.form-select option,.form-select optgroup{background-color:var(--field);color:var(--ink)}
 .modal-content{background:var(--bg);border:1px solid var(--line);border-radius:20px}
 .sticky-act{position:sticky;bottom:0;padding:.7rem 0;background:linear-gradient(to top,var(--bg) 65%,transparent)}
 .list-row{border-bottom:1px solid var(--line);padding:.6rem 0}
