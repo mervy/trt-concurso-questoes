@@ -2,7 +2,7 @@
 
 Banco de questões e simulador de provas para o **concurso do Tribunal Regional do Trabalho da 4ª Região (TRT4, Edital nº 01/2026, banca FCC)**. As provas estão previstas para **31/01/2027**, em Porto Alegre/RS.
 
-O banco tem 305 questões de múltipla escolha com cinco alternativas, no estilo FCC. Todas trazem gabarito comentado e base legal. As 174 questões de Direito também têm uma **dica de prova**, com mnemônicos e pegadinhas comuns da banca.
+O banco tem 351 questões de múltipla escolha com cinco alternativas, no estilo FCC. Todas trazem gabarito comentado e base legal. As 249 questões de Direito, Língua Portuguesa e Raciocínio Lógico também têm uma **dica de prova**, com mnemônicos e pegadinhas comuns da banca, e as de Raciocínio Lógico trazem a resolução passo a passo.
 
 O app inteiro é um único arquivo HTML: não precisa de servidor, instalação nem cadastro.
 
@@ -24,7 +24,7 @@ O visual usa Bootstrap e Bootstrap Icons via CDN, então é preciso estar conect
 
 ### Treinar
 - Uma questão por vez, em card, com correção ao clicar ou só depois de confirmar.
-- Depois de responder, aparecem o **gabarito comentado** e, nas questões de Direito, a **Dica de prova**.
+- Depois de responder, aparecem o **gabarito comentado** e, nas questões de Direito, Português e Raciocínio Lógico, a **Dica de prova**.
 - Filtros por disciplina e por situação, e busca por texto, artigo ou tema.
 - **Revisão inteligente** (repetição espaçada): cada questão fica numa "caixa" de 0 a 4. Quem acerta sobe de caixa e vê a questão de novo em 1, 3, 7 ou 15 dias; quem erra volta para a caixa 0.
 - Opção de embaralhar as alternativas e de marcar questões para revisão.
@@ -70,6 +70,8 @@ O conteúdo programático muda conforme o cargo, então o banco pode ser filtrad
 | Disciplina | Questões |
 |---|---:|
 | Direito do Trabalho (CLT) | 53 |
+| Língua Portuguesa | 40 |
+| Raciocínio Lógico e Estatística | 35 |
 | Direito Administrativo (inclui Lei 14.133/2021, LAI e LGPD) | 32 |
 | Lei 8.112/1990 e Carreiras do PJU (Lei 11.416/2006) | 27 |
 | Direito Constitucional | 22 |
@@ -77,15 +79,13 @@ O conteúdo programático muda conforme o cargo, então o banco pode ser filtrad
 | Processo do Trabalho | 19 |
 | Legislação Institucional (CNJ, CSJT e TRT4) | 18 |
 | Gestão de Pessoas | 18 |
-| Língua Portuguesa | 16 |
 | Edital TRT4 e regras da FCC | 16 |
 | Orçamento Público / AFO | 14 |
-| Raciocínio Lógico e Estatística | 13 |
 | Direitos Humanos | 11 |
 | Informática (Conhecimentos Gerais) | 10 |
 | TI (Analista e Técnico) | 10 |
 | Atualizações 2025/2026 (EC 141/2026, cotas, AQ do PJU) | 6 |
-| **Total** | **305** |
+| **Total** | **351** |
 
 ## Formato das questões
 
