@@ -525,9 +525,11 @@ function filt(){
   });
   return list.map(x=>x.i);
 }
-function quick(st){T.f={d:'all',st,q:'',ord:st==='due'||st==='wrong'?'smart':'seq'};T.ids=filt();T.i=0;reset();go('train');}
+/* começa na primeira questão ainda não respondida, para não reabrir sempre nas já feitas */
+function firstNew(){const k=T.ids.findIndex(id=>!(S.pr[id]&&S.pr[id].n));return k<0?0:k;}
+function quick(st){T.f={d:'all',st,q:'',ord:st==='due'||st==='wrong'?'smart':'seq'};T.ids=filt();T.i=firstNew();reset();go('train');}
 function reset(){T.sel=null;T.shown=false;T.reveal=false;}
-function startTrain(){T.ids=filt();T.i=0;reset();renderTrain();}
+function startTrain(){T.ids=filt();T.i=firstNew();reset();renderTrain();}
 function renderTrain(){
   const opts=Object.keys(DISC).map(k=>'<option value="'+k+'" '+(T.f.d===k?'selected':'')+'>'+esc(DISC[k].n)+'</option>').join('');
   $('#v-train').innerHTML=
@@ -540,7 +542,7 @@ function renderTrain(){
     '<div class="col-md-3"><label class="lbl mb-1">Buscar</label><input class="form-control form-control-sm" placeholder="art. 477, férias, crase..." value="'+esc(T.f.q)+'" oninput="T.f.q=this.value" onkeydown="if(event.key===\'Enter\')startTrain()"></div>'+
     '<div class="col-md-1"><button class="btn btn-grad btn-sm w-100" onclick="startTrain()"><i class="bi bi-funnel"></i></button></div>'+
   '</div></div><div id="card"></div>';
-  if(!T.ids.length)T.ids=filt();
+  if(!T.ids.length){T.ids=filt();T.i=firstNew();}
   paintCard();
 }
 function paintCard(){
@@ -899,7 +901,7 @@ window.addEventListener('beforeunload',()=>{try{localStorage.setItem(KEY,JSON.st
 
 /* boot */
 applyTheme();
-T.ids=filt();
+T.ids=filt();T.i=firstNew();
 go('home');
 console.log('%cTRT4 FCC Trainer','color:#22d3ee;font-weight:bold',all().length+' questões carregadas.');
 </script>
@@ -1179,7 +1181,7 @@ function applyPerfil(p){
   const ex=PERFIS[p].ex, list=ex.length?FULL.filter(q=>ex.indexOf(q.d)<0):FULL.slice();
   BANK.length=0; Array.prototype.push.apply(BANK,list);
   reindex();
-  T.f.d='all'; T.ids=filt(); T.i=0; reset();
+  T.f.d='all'; T.ids=filt(); T.i=firstNew(); reset();
   const sel=document.getElementById('perfilSel'); if(sel)sel.value=p;
   go('home');
   toast('Perfil: '+PERFIS[p].n+' — '+BANK.length+' questões.','primary','funnel');
